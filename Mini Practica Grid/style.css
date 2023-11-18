@@ -1,0 +1,121 @@
+:root {
+  --primary-color: rgb(236, 236, 236);
+  --secondary-color: rgb(21, 21, 21);
+  --blue-color: #2bc5cd;
+  --orange-color: #ff693d;
+  --border: 2px solid var(--blue-color);
+  --spacing: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.tabla {
+  display: grid;
+  padding: 20px;
+  grid-gap: 25px;
+  grid-template-areas:
+    'header school student'
+    'header main time'
+    'alumni footer footer';
+  min-height: 95vh;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.school {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+  background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+.alumni,
+.school,
+.student,
+.time {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+body {
+  width: 100%;
+  height: 100svh;
+}
+footer {
+  width: 100%;
+  height: 100%;
+  background-color: #ff693d;
+}
+header {
+  background-color: #2bc5cd;
+  color: aliceblue;
+  display: grid;
+  padding: 20px;
+}
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #2bc5cd;
+  border-style: solid;
+  font-size: 20px;
+  width: 100%;
+}
+.tabla > header {
+  grid-area: header;
+}
+.tabla > .school {
+  grid-area: school;
+}
+.tabla > .student {
+  grid-area: student;
+}
+.tabla > main {
+  grid-area: main;
+}
+.tabla > .time {
+  grid-area: time;
+}
+.tabla > .alumni {
+  grid-area: alumni;
+}
+.tabla > footer {
+  grid-area: footer;
+}
+
+@media (max-width: 990px) {
+  .tabla {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'header school'
+      'student main'
+      'time alumni'
+      'footer footer';
+  }
+}
+@media (max-width: 415px) {
+  .tabla {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'school'
+      'student'
+      'main'
+      'time'
+      'alumni'
+      'footer';
+  }
+}
